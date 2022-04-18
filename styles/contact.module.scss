@@ -1,0 +1,40 @@
+$box-margin-10:10px;
+.contact {
+    margin: auto;
+    width: 30%;
+    &_item{
+        margin: $box-margin-10;
+        & input{
+            width: 100%;
+            margin-top: $box-margin-10;
+            padding: 5px;
+            border: 1px solid rgb(73, 70, 70);
+            border-radius: 3px;
+            outline: none;
+            &:focus{
+                border: 1px solid rgb(11, 119, 243);
+           
+            }
+        }
+    }
+    & .form_floating{
+        margin: $box-margin-10;
+        & textarea{
+            width: 100%;
+            height: 5rem;
+            resize: none;
+            outline: none;
+            margin-top: inherit;
+        }
+    }
+    & button{
+        background-color: hsl(212,100,47);
+        color: white;
+        padding: 6px;
+        width: 5rem;
+        border: none;
+        border-radius: 5px;
+        margin: $box-margin-10;
+        cursor: pointer;
+    }
+}

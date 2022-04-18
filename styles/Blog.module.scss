@@ -1,0 +1,20 @@
+.Blogs {
+    padding: 2rem 0;
+    width: 60%;
+    margin: auto;
+    &__item{
+        cursor: pointer;
+    }
+    & p{
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 28px;
+        margin-top: 0;
+        margin-left: 6px;
+    }
+    & h2{
+        margin-bottom: 5px;
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}

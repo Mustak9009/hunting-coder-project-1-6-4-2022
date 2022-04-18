@@ -1,0 +1,25 @@
+{
+    "cardData":[
+        {
+            "id":1,
+            "title":"How to learn JavaScript in  2022?",
+            "paragraph":"We have a blog where you can learn  JavaScript.",
+            "path":"/HomeImg/js.png",
+            "slug":"how-to-learn-javascript"
+        },
+        {
+            "id":2,
+            "title":"How to learn Python in  2022?",
+            "paragraph":"We have a blog where you can learn  python.",
+            "path":"/HomeImg/python.png",
+            "slug":"how-to-learn-python"
+        },
+        {
+            "id":3,
+            "title":"How to learn nextJs in  2022?",
+            "paragraph":"We have a blog where you can learn  nextJs.",
+            "path":"/HomeImg/nextJs.png",
+            "slug":"how-to-learn-nextJs"
+        }
+    ]
+}

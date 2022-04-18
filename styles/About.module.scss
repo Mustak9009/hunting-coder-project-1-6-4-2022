@@ -1,0 +1,31 @@
+// -----------------------------------
+// About page css :-
+//-------------------------------
+.About {
+    margin: auto;
+    width: 50%;
+    &__text_area {
+        width: 30rem;
+        margin-bottom: 5rem;
+        & h1 {
+            text-transform:capitalize;
+            margin-bottom: 0;
+        }
+
+        & p {
+            margin-top: 5px;
+            width: fit-content;
+            color: rgb(115, 111, 111);
+        }
+
+        & button {
+            background-color: #2E23AA;
+            border-radius: 4px;
+            color: white;
+            padding: 8px;
+            border: none;
+            width: 7rem;
+            cursor: pointer;
+        }
+    }
+}
