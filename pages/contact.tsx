@@ -1,13 +1,12 @@
 import React from "react";
 import { NextPage } from "next";
 import style from "../styles/contact.module.scss";
-import { useForm,formDataType } from "./HandleContactData";
-
+import useForm,{formDataType,Data} from './hooks/useForm.hook';
 //use react dangerouslySetInnerHTML
 function createMarkup() {
   return { __html: "Contact page" };
 }
-//Set data type(formDataType) and initial objects 
+//Set data type(formDataType) and initial objects
 const initialState: formDataType = {
   name: "",
   email: "",
@@ -15,27 +14,24 @@ const initialState: formDataType = {
   textarea: "",
 };
 
-const Contact: NextPage = () => {
+const Contact:NextPage= () => {
   //Use our custom hook to handle form Data.
-  const { onChange, onSubmit, values,setValue } = useForm(
-    sendDataToDataBase,
-    initialState
-  );
+  const [setValue, onChange, onSubmit]= useForm(sendDataToDataBase,initialState);
   /*  A submit function that will execute upon form submission 
     (send data to database or api or etc..)*/
-  async function sendDataToDataBase() {
+  async function sendDataToDataBase(){
     //Set data to api -> using post method https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
     fetch("http://localhost:3000/api/HandelPost", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(values),
+      body: JSON.stringify(Data),
     })
       .then((response) => response.json())
       .then(() => {
         alert("Thank you for joining us");
-        setValue({name:"",email:"",phone:"",textarea:""});
+        setValue({ name: "", email: "", phone: "", textarea: "" });
       })
       .catch((error) => {
         console.error("Error:", error);
@@ -55,7 +51,7 @@ const Contact: NextPage = () => {
             name="name"
             placeholder="Name"
             onChange={onChange}
-            value={values.name}
+            value={Data.name}
             required
           />
         </div>
@@ -68,7 +64,7 @@ const Contact: NextPage = () => {
             name="email"
             placeholder="Email"
             onChange={onChange}
-            value={values.email}
+            value={Data.email}
             required
           />
         </div>
@@ -81,7 +77,7 @@ const Contact: NextPage = () => {
             name="phone"
             placeholder="phone"
             onChange={onChange}
-            value={values.phone}
+            value={Data.phone}
             required
           />
         </div>
@@ -93,7 +89,7 @@ const Contact: NextPage = () => {
             id="floatingTextarea2"
             name="textarea"
             onChange={onChange}
-            value={values.textarea}
+            value={Data.textarea}
           ></textarea>
         </div>
         <button type="submit" className="btn btn-primary">

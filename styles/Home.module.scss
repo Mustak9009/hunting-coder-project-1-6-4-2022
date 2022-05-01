@@ -137,6 +137,7 @@ $button-color-darkBlue:#2E23AA;
   }
 
   .HomePageBlogs__card_img {
+    padding: 10px !important;
     place-items: center start;
   }
 
@@ -173,13 +174,7 @@ $button-color-darkBlue:#2E23AA;
     background-color: white;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 5px;
-    &>img {
-      width: 2rem;
-      position: absolute;
-      right: 10px;
-      top: 18px;
-      cursor: pointer;
-    }
+  
     &>h1 {
       margin: 0 0 10px 0;
     }
@@ -202,7 +197,17 @@ $button-color-darkBlue:#2E23AA;
     }
   }
 }
+.HomePage__toggle_img{
+  position: absolute;
+  right: 10px;
+  top: 13px;
+  cursor: pointer;
+}
 //Hide element when user click on -> close
 .Close__element_toggle_button{
   display: none;
+}
+//Home img responsive ness
+.HomeImg{
+  width: clamp(10rem,100vw,50rem);
 }

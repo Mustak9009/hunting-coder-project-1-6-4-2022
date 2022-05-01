@@ -5,16 +5,16 @@ const NavBar = () => {
   return (
     <nav className={styles.MainNav}>
     <ul>
-      <Link href="/">
+      <Link href="/" passHref>
         <li>Home</li>
       </Link>
-      <Link href="/about">
+      <Link href="/about" passHref>
         <li>About</li>
       </Link>
-      <Link href="/blog">
+      <Link href="/blog" passHref>
         <li>Blogs</li>
       </Link>
-      <Link href="/contact">
+      <Link href="/contact" passHref>
         <li>Contact US</li>
       </Link>
     </ul>

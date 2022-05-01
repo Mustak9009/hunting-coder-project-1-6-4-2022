@@ -2,8 +2,6 @@ import { InferGetServerSidePropsType, NextPage } from "next";
 import Link from "next/link";
 import Style from "../styles/Blog.module.scss";
 import fs from "fs";
-import InfiniteScroll from "react-infinite-scroll-component";
-import { useState } from "react";
 type apiDataType = {
   id: number;
   title: string;
@@ -19,7 +17,7 @@ const blog: NextPage<InferGetServerSidePropsType<typeof getStaticProps>> = ({all
         {allBlogs.map((data) => {
           return (
             <div key={data.id}>
-              <Link href={`/blogPost/${data.slug}`}>
+              <Link href={`/blogPost/${data.slug}`} passHref>
                 <h2 className={Style.Blogs__item}>{data.title}</h2>
               </Link>
               <p>{data.content.substring(0, 267)}...</p>

@@ -3,8 +3,6 @@ import React from "react";
 import HeadTag from "next/head";
 import styles from "../styles/Home.module.scss"; //Similar to .css
 import Script from "next/script";
-import Img from "next/image";
-import HomeImg from "../public/HomeImg/HomeImg.png";
 import Link from "next/link";
 import WhenWindowLoad from './WhenWindowLoad'
 //set Array type -> (Note:- type ka array hote hobe tar kono mane nai)
@@ -55,17 +53,20 @@ const Home: NextPage = () => {
           .jsxStyle {
             color: black;
           }
+          .HomePageBlogs__card_img{
+            margin-top:2rem  !important;
+            border:2px solid red  !important;
+          }
         `}
       </style>
       <main className={styles.HomePage}>
         <div className={styles.HomePage__content}>
           <div className="HomePage__img_section">
-            <Img
-              src={HomeImg}
+            <img
+              src="HomeImg/HomeImg.png"
               alt="learning illustration"
               width={700}
               height={364}
-              priority
               placeholder="blur"
             />
           </div>
@@ -77,7 +78,7 @@ const Home: NextPage = () => {
             <p>
               Get started withHunting coder learn <br /> something new.
             </p>
-            <Link href="/about">
+            <Link href="/about" passHref>
               <button title="About us" className={styles.HomePageButton}>
                 About Us
               </button>
@@ -100,7 +101,8 @@ const Home: NextPage = () => {
                 <img
                   src={data.path}
                   alt="lean javascript logo"
-                  width={80}
+                  width={100}
+                  height={100}
                   className={styles.HomePageBlogs__card_img}
                 />
               </div>
@@ -110,7 +112,7 @@ const Home: NextPage = () => {
               >
                 <h2 id="HomePageBlog__section-heading-main">{data.title}</h2>
                 <p>{data.paragraph}</p>
-                <Link href={`/blogPost/${data.slug}`}>
+                <Link href={`/blogPost/${data.slug}`} passHref>
                   <button>Check out</button>
                 </Link>
               </section>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/Home.module.scss";
-const WhenWindowLoad = () => { 
+
+const WhenWindowLoad = () => {
   const [toggle, setToggle] = useState<boolean>(); //toggle Card element
   const [buttonClick, setButtonClick] = useState<boolean>(); //click on button -> checker
   useEffect(() => {
@@ -8,8 +9,8 @@ const WhenWindowLoad = () => {
     //Condition -> toggle card show or not
     if (data === "false") {
       setToggle(false); //set card show or not
-    }else{
-      setToggle(true)
+    } else {
+      setToggle(true);
     }
   }, [buttonClick, toggle]); //useEffect depends on [buttonClick,toggle] -> state
   function onClickButton() {
@@ -19,7 +20,7 @@ const WhenWindowLoad = () => {
   }
   return (
     <>
-      {/*Toggle card*/} 
+      {/*Toggle card*/}
       <div
         className={`${styles.HomePage__toggle} ${
           toggle ? "" : styles.Close__element_toggle_button
@@ -30,11 +31,15 @@ const WhenWindowLoad = () => {
           className={`${styles.HomePage__toggle_item} `}
         >
           <h1 id="HomePage__toggle_item-when-load">Welcome 😊</h1>
-          <img
-            src="/HomeImg/Cross.png"
-            alt="Cross logo"
-            onClick={() => onClickButton()}
-          />
+          <div        className={styles.HomePage__toggle_img}>
+            <img
+              src="HomeImg/Cross.png"
+              alt="Cross logo"
+              width={35}
+              height={30}
+              onClick={() => onClickButton()}
+            />
+          </div>
           <p>
             <span>Hello there!</span> Welcome to my blog toy project that I
             created when I was learning next js with codeWithHarry Bhai.
@@ -49,4 +54,4 @@ const WhenWindowLoad = () => {
 export default WhenWindowLoad;
 //Note that -> Default is problem
 // more ifo -> https://www.freecodecamp.org/news/how-to-use-localstorage-with-react-hooks-to-set-and-get-items/  about localStorage
-          //-> https://www.youtube.com/watch?v=wodWDIdV9BY&t=576s
+//-> https://www.youtube.com/watch?v=wodWDIdV9BY&t=576s

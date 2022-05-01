@@ -1,12 +1,13 @@
 import React from "react";
 import { NextPage } from "next";
+
 import Style from '../styles/About.module.scss';
 const About: NextPage = () => {
   return (
     <div className={Style.About}>
       <div className="About__img-illustrator">
         <img
-          src="/IllustratorAbout.png"
+          src="/illustratorAbout.png"
           alt="blue man illustrator"
           width={350}
           height={346}
