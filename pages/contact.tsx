@@ -21,7 +21,7 @@ const Contact:NextPage= () => {
     (send data to database or api or etc..)*/
   async function sendDataToDataBase(){
     //Set data to api -> using post method https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-    fetch("https://nextjs-tutorial-project-1-codewithharry.netlify.app/api/HandelPost", {
+    fetch("http://localhost:3000/api/HandelPost", {
       method: "POST", // or 'PUT'
       headers: {
         "Content-Type": "application/json",
