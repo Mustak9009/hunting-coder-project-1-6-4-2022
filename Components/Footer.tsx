@@ -19,7 +19,7 @@ const Footer = () => {
       </style>
       <footer className="Footer">
         <p>Contact with me: jjttssi592@gmail.com</p>
-        <p>Hello</p>
+    
       </footer>
     </>
   );
