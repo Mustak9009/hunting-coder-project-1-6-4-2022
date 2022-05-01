@@ -4,7 +4,8 @@ import HeadTag from "next/head";
 import styles from "../styles/Home.module.scss"; //Similar to .css
 import Script from "next/script";
 import Link from "next/link";
-import WhenWindowLoad from './WhenWindowLoad'
+import WhenWindowLoad from './WhenWindowLoad';
+import fs from 'fs';
 //set Array type -> (Note:- type ka array hote hobe tar kono mane nai)
 type apiDataType = {
   id: number;
@@ -21,11 +22,12 @@ const Home: NextPage = () => {
   React.useEffect(() => {
     async function getBlogDataHome() {
       const response = await fetch(
-        "http://localhost:3000/api/getHomePageBlogsData/"
+        "https://nextjs-tutorial-project-1-codewithharry.netlify.app/api/getHomePageBlogsData/"
       );
       const data = await response.json();
       setApiData(data.cardData);
     }
+    
     getBlogDataHome();
   }, []);
   return (
