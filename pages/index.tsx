@@ -114,7 +114,7 @@ const Home: NextPage = () => {
               >
                 <h2 id="HomePageBlog__section-heading-main">How to learn JavaScript in  2022?</h2>
                 <p>We have a blog where you can learn  JavaScript.</p>
-                <Link href='/blogPost/$how-to-learn-javascript' passHref>
+                <Link href='/blogPost/how-to-learn-javascript' passHref>
                   <button>Check out</button>
                 </Link>
               </section>
