@@ -21,7 +21,7 @@ const Home: NextPage = () => {
   React.useEffect(() => {
     async function getBlogDataHome() {
       const response = await fetch(
-        "http://localhost:3000/api/getHomePageBlogsData/"
+        "https://nextjs-tutorial-project-1-codewithharry.netlify.app/api/getHomePageBlogsData/"
       );
       const data = await response.json();
       setApiData(data.cardData);
