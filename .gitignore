@@ -33,3 +33,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+# contactData 
+/contactData/1.json
+/contactData/2.json
